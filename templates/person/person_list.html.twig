@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LISTE DES PERSONNAGES{% endblock %}
+
+{% block body %}
+    <h1>LISTE DES PERSONNAGES</h1>
+
+    {% for fighters in person %}
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ fighters.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ fighters.name }}</td>
+        </tr>
+        <tr>
+            <th>Force</th>
+            <td>{{ fighters.strength }}</td>
+        </tr>
+        <tr>
+            <th>Vie</th>
+            <td>{{ fighters.life }}</td>
+        </tr>
+        <tr>
+            <th>Armure</th>
+            <td>{{ fighters.armor }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ fighters.description}}</td>
+        </tr>
+
+        </tbody>
+    </table>
+{% endfor %}
+    <a href="{{ path('create') }}">Créer nouveau personnage</a>
+
+    <a href="{{ path('fight') }}">Combattre</a>
+
+
+{% endblock %}

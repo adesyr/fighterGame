@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}COMBAT{% endblock %}
+
+{% block body %}
+    <h1>LISTE DES PERSONNAGES</h1>
+<div style ="display: inline-block;width: 40%;">
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ fighter1.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ fighter1.name }}</td>
+        </tr>
+        <tr>
+            <th>Force</th>
+            <td>{{ fighter1.strength }}</td>
+        </tr>
+        <tr>
+            <th>Vie</th>
+            <td>{{ fighter1.life }}</td>
+        </tr>
+        <tr>
+            <th>Armure</th>
+            <td>{{ fighter1.armor }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ fighter1.description }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('attack', ['fighter1Id': fighter1.id, 'fighter2Id': fighter2.id]) }}">Attaquer</a>
+    <a href="{{ path('heal', ['fighterId': fighter1.id]) }}">Se soigner</a>
+
+</div>
+
+<div style ="display: inline-block;width: 40%;">
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ fighter2.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ fighter2.name }}</td>
+        </tr>
+        <tr>
+            <th>Force</th>
+            <td>{{ fighter2.strength }}</td>
+        </tr>
+        <tr>
+            <th>Vie</th>
+            <td>{{ fighter2.life }}</td>
+        </tr>
+        <tr>
+            <th>Armure</th>
+            <td>{{ fighter2.armor }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ fighter2.description}}</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('attack', ['fighter1Id': fighter2.id, 'fighter2Id': fighter1.id]) }}">Attaquer</a>
+    <a href="{{ path('heal', ['fighterId': fighter2.id]) }}">Se soigner</a></div>
+
+
+    <a href="{{ path('create') }}">Créer nouveau personnage</a>
+
+    <a href="{{ path('attack') }}">Combattre</a>
+
+
+{% endblock %}

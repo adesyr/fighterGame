@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FORMULAIRE DE CREATION{% endblock %}
+
+{% block body %}
+    <h1>CREATION D'UN PERSONNAGE</h1>
+
+    <style>
+    </style>
+
+
+{#     afficher les champs du formulaire un par un #}
+
+    {{ form_start(formPerson) }}
+
+        {{ form_row(formPerson.name) }}
+        {{ form_row(formPerson.strength) }}
+        {{ form_row(formPerson.life) }}
+        {{ form_row(formPerson.armor) }}
+        {{ form_row(formPerson.description) }}
+
+
+        {{ form_end(formPerson) }}
+
+
+{% endblock %}
